@@ -6,6 +6,7 @@ import os
 import sys
 import time
 import glob
+import shutil
 
 
 source = '/Volumes/hecate/lisaaniyat/data/'
@@ -14,6 +15,7 @@ destination = '/Volumes/hecate/lisaaniyat/avi_raw/'
 os.chdir(source)
 allfolders = glob.glob(os.path.join(source, '*'))
 
+all_avi = []
 for folder in allfolders:
     os.chdir(folder)
     dicom_folders = glob.glob(os.path.join(os.getcwd(), '*'))
@@ -25,22 +27,18 @@ for folder in allfolders:
                     os.chdir(run)
                     avi_files = glob.glob(os.path.join(os.getcwd(), '*'))
                     for avi in avi_files:
-                        if '.avi' in avi_files:
-                            os.rename()
+                        basenames = os.listdir()
+                        for name in basenames:
+                            if '.avi' in name:
+                                os.rename(run + '/' + name, destination + '%s'%os.path.basename(folder) + '_' + name)
 
-                    avi = glob.glob(os.path.join(os.listdir(), '*'))
-                    os.rename(run, destination + run)
-
-        # enter folder
-        # extract .avi
-
-all_folders = []
-for folder in allfolders:
-    if 'Run' in folder:
-        all_folders.append(folder)
-
-for folder in all_folders:
-    source = folder + '/'
-    allfiles = os.listdir(source)
-    for f in allfiles:
-        os.rename(source + f, destination + f)
+# all_folders = []
+# for folder in allfolders:
+#     if 'Run' in folder:
+#         all_folders.append(folder)
+#
+# for folder in all_folders:
+#     source = folder + '/'
+#     allfiles = os.listdir(source)
+#     for f in allfiles:
+#         os.rename(source + f, destination + f)
