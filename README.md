@@ -1,5 +1,4 @@
-# Lisaaniyat
-## Studying Arabic speech in motion
+# Lisaaniyat: Studying Arabic speech in motion
 
 ## Executive Summary
 
