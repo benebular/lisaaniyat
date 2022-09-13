@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-### Arabic has long had a reputation of being articulatorily 'special'. It features speech sounds that are crosslinguistically
+Arabic has long had a reputation of being articulatorily 'special'. It features speech sounds that are crosslinguistically
 rare; Arabic is one of only a handful of languages in the world that uses sounds produced
 using the pharynx, a ring of muscles at the back of the throat. Even fewer languages (only three attested in
 the world) have both pharyngeal sounds and other unique sounds produced between the teeth (such as
