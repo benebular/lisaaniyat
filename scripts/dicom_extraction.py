@@ -9,8 +9,8 @@ import glob
 import shutil
 
 
-source = '/Volumes/circe/lisaaniyat/icphs2022_data/'
-destination = '/Volumes/circe/lisaaniyat/icphs2022_data/avi/'
+source = '/Volumes/circe/lisaaniyat/analysis/morpho_masking/data/'
+destination = '/Volumes/circe/lisaaniyat/data_backup/avi/'
 os.chdir(source)
 allfolders = glob.glob(os.path.join(source, '*'))
 
