@@ -43,6 +43,15 @@ phary_approx_pts_list = ['Sub0271_LP_Vocal_Y0368_lisaaniyat_2_pts', 'Sub0271_Lp_
                             'Sub0271_LP_Vocal_Y0368_lisaaniyat_26_pts', 'Sub0271_LP_Vocal_Y0368_lisaaniyat_29_pts', 'Sub0271_LP_Vocal_Y0368_lisaaniyat_35_pts',
                             'Sub0271_LP_Vocal_Y0368_lisaaniyat_41_pts', 'Sub0271_LP_Vocal_Y0368_lisaaniyat_47_pts', 'Sub0271_LP_Vocal_Y0368_lisaaniyat_53_pts']                 
 
+
+##### Y0365 ####### Tunisian
+phary_fric_pts_list = ['Sub0256_Lp_Vocal_Y0365_lisaaniyat_8_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_11_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_14_pts',
+                            'Sub0256_Lp_Vocal_Y0365_lisaaniyat_20_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_23_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_32_pts',
+                            'Sub0256_Lp_Vocal_Y0365_lisaaniyat_38_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_44_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_50_pts']                 
+phary_approx_pts_list = ['Sub0256_Lp_Vocal_Y0365_lisaaniyat_2_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_5_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_17_pts',
+                            'Sub0256_Lp_Vocal_Y0365_lisaaniyat_26_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_29_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_35_pts',
+                            'Sub0256_Lp_Vocal_Y0365_lisaaniyat_41_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_47_pts', 'Sub0256_Lp_Vocal_Y0365_lisaaniyat_53_pts']                 
+
 # # Function to scale columns to a range between 0 and 100
 # def scale_to_proportional(df, columns):
 #     for col in columns:
@@ -66,7 +75,7 @@ lists = [phary_fric_pts_list, phary_approx_pts_list]
 
 # set up fig
 fig, ax = plt.subplots(figsize=(10, 8))
-fig.suptitle('Vocal Tract Contours for Pharyngeal /ħ ʕ/', fontsize=20)
+fig.suptitle('Vocal Tract Contours for Pharyngeal /ħ ʕ/', fontsize=28)
 
 # Iterate over the list names and the corresponding lists
 for i, (list_name, pts_list) in enumerate(zip(list_names, lists)):
@@ -84,22 +93,24 @@ for i, (list_name, pts_list) in enumerate(zip(list_names, lists)):
 
         # Set y-axis label only for the first plot
         if i == 0:
-            ax.set_ylabel('Distance (mm)', fontsize=12)
+            ax.set_ylabel('Distance (mm)', fontsize=16)
 
         # Set x-axis label for all plots (or adjust as needed)
-        ax.set_xlabel('Distance (mm)', fontsize=12)
+        ax.set_xlabel('Distance (mm)', fontsize=16)
 ax.invert_yaxis()  # Inverting the y-axis
 
 # Create custom legend handles
 legend_handles = [
-    Line2D([0], [0], color=colors['phary_fric'], lw=3, label='ħ', fontsize=16),
-    Line2D([0], [0], color=colors['phary_approx'], lw=3, label='ʕ', fontsize=16)
+    Line2D([0], [0], color=colors['phary_fric'], lw=3, label='ħ'),
+    Line2D([0], [0], color=colors['phary_approx'], lw=3, label='ʕ')
 ]
 
 # Add the custom legend to the plot
-ax.legend(handles=legend_handles)
+# ax.legend(handles=legend_handles)
+ax.legend(handles=legend_handles, fontsize=18, handlelength=2, labelspacing=1.2)
 
-plt.title('Speaker 1 (Palestinian)', fontsize=14)
+
+plt.title('Speaker 2 (Tunisian)', fontsize=18)
 
 
 # Show plot
@@ -125,7 +136,7 @@ lists = [lary_fric_pts_list, lary_stop_pts_list]
 
 # set up fig
 fig, ax = plt.subplots(figsize=(10, 8))
-fig.suptitle('Vocal Tract Contours for Laryngeal /h ʔ/', fontsize=20)
+fig.suptitle('Vocal Tract Contours for Laryngeal /h ʔ/', fontsize=28)
 
 
 # Iterate over the list names and the corresponding lists
@@ -145,26 +156,30 @@ for i, (list_name, pts_list) in enumerate(zip(list_names, lists)):
 
         # Set y-axis label only for the first plot
         if i == 0:
-            ax.set_ylabel('Distance (mm)', fontsize=12)
+            ax.set_ylabel('Distance (mm)', fontsize=16)
 
         # Set x-axis label for all plots (or adjust as needed)
-        ax.set_xlabel('Distance (mm)', fontsize=12)
+        ax.set_xlabel('Distance (mm)', fontsize=16)
 ax.invert_yaxis()  # Inverting the y-axis
 
 # Create custom legend handles
 legend_handles = [
-    Line2D([0], [0], color=colors['lary_fric'], lw=2, label='h', fontsize=16),
-    Line2D([0], [0], color=colors['lary_stop'], lw=2, label='ʔ', fontsize=16)
+    Line2D([0], [0], color=colors['lary_fric'], lw=2, label='h'),
+    Line2D([0], [0], color=colors['lary_stop'], lw=2, label='ʔ')
 ]
 
 # Add the custom legend to the plot
-ax.legend(handles=legend_handles)
+# ax.legend(handles=legend_handles)
+ax.legend(handles=legend_handles, fontsize=18, handlelength=2, labelspacing=1.2)
 
-plt.title('Speaker 4 (Moroccan)', fontsize=14)
+plt.title('Speaker 4 (Moroccan)', fontsize=18)
 
 # Show plot
 plt.show()
 
+
+
+#### four conditions ######
 
 # Pair each list with its corresponding name
 list_names = ['lary_fric', 'lary_stop', 'phary_fric', 'phary_approx']
@@ -177,6 +192,63 @@ legend_handles = [
     Line2D([0], [0], color=colors['phary_fric'], lw=2, label='ħ'),
     Line2D([0], [0], color=colors['phary_approx'], lw=2, label='ʕ')
 ]
+
+
+
+#### archive for one base graph with two conditions #####
+# Define colors for each list
+colors = {
+    'lary_fric': '#1b9e77',   # Green-like color
+    'lary_stop': '#e7298a',   # Pink-like color
+    'phary_fric': '#d95f02',  # Orange-like color
+    'phary_approx': '#7570b3' # Blue-like color
+}
+
+# Pair each list with its corresponding name
+list_names = ['phary_fric', 'phary_approx']
+lists = [phary_fric_pts_list, phary_approx_pts_list]
+
+# set up fig
+fig, ax = plt.subplots(figsize=(10, 8))
+fig.suptitle('Vocal Tract Contours for Pharyngeal /ħ ʕ/', fontsize=28)
+
+# Iterate over the list names and the corresponding lists
+for i, (list_name, pts_list) in enumerate(zip(list_names, lists)):
+    for pts in pts_list:
+        pts_fname = os.path.join(dir, f'{pts}.csv')
+        print(f"Reading file: {pts_fname}")  # Debugging line
+        pts_data = pd.read_csv(pts_fname)
+        print(pts_data.head())  # Debugging line to check if data is read correctly
+        # scaled_df = scale_to_proportional(pts_data,columns_to_scale)
+        # ax = axs[i // 2, i % 2]  # Adjust indexing based on your subplot arrangement
+        # Ensure you are using the correct column names from your CSV files
+        ax.plot(pts_data['rt_1'], pts_data['rt_2'], color=colors[list_name])
+        ax.plot(pts_data['lf_1'], pts_data['lf_2'], color=colors[list_name])
+
+
+        # Set y-axis label only for the first plot
+        if i == 0:
+            ax.set_ylabel('Distance (mm)', fontsize=16)
+
+        # Set x-axis label for all plots (or adjust as needed)
+        ax.set_xlabel('Distance (mm)', fontsize=16)
+ax.invert_yaxis()  # Inverting the y-axis
+
+# Create custom legend handles
+legend_handles = [
+    Line2D([0], [0], color=colors['phary_fric'], lw=3, label='ħ', fontsize=16),
+    Line2D([0], [0], color=colors['phary_approx'], lw=3, label='ʕ', fontsize=16)
+]
+
+# Add the custom legend to the plot
+ax.legend(handles=legend_handles)
+
+plt.title('Speaker 1 (Palestinian)', fontsize=18)
+
+
+# Show plot
+plt.show()
+
 
 # # Plotting for each list of points
 # for list_name, pts_list in zip(list_names, lists):
